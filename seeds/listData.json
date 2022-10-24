@@ -1,0 +1,20 @@
+[
+    {
+        "list_type": "Shopping", 
+        "list_contents": "eggs, milk, ham.", 
+        "rating": [1, 2, 3, 4, 5], 
+        "reviews": ["This is a pretty solid shopping list", "This is list basicAF."] 
+    }, 
+    {
+        "list_type": "Wishlist", 
+        "list_contents": "Lambo, Bugatti", 
+        "rating": [1, 2, 3, 4, 5], 
+        "reviews": ["Wow that sounds amazing!", "Keep dreaming!"] 
+    }, 
+    {
+        "list_type": "Travel Spots", 
+        "list_contents": "Italy, Japan, New Zealand", 
+        "rating": [1, 2, 3, 4, 5], 
+        "reviews": ["The food in Italy is soooo good!", "Japan sounds like a great cultural experience.", "The landscape in New Zealand is AMAZING!"] 
+    }
+]

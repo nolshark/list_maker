@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Mo",
+        "email": "Mo@hotmail.com",
+        "password": "password1",
+        "state": "Michigan"
+      },
+      {
+        "name": "Nolan",
+        "email": "NolanOG@gmail.com",
+        "password": "password2", 
+        "state": "Florida"
+      },
+      {
+        "name": "Nora",
+        "email": "Nora20@aol.com",
+        "password": "password3",
+        "state": "Alaska"
+      }
+]

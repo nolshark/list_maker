@@ -1,20 +1,23 @@
 [
     {
-        "list_type": "Shopping", 
-        "list_contents": "eggs, milk, ham.", 
-        "rating": [1, 2, 3, 4, 5], 
-        "reviews": ["This is a pretty solid shopping list", "This is list basicAF."] 
+        "name": "Mo", 
+        "title": "Shopping", 
+        "list_contents": "eggs, milk, ham, and cheese.",   
+        "comments": "This is a pretty solid shopping list for the basics", 
+        "date": "10/24/2022"
     }, 
     {
-        "list_type": "Wishlist", 
+        "name": "Nolan", 
+        "title": "Wishlist", 
         "list_contents": "Lambo, Bugatti", 
-        "rating": [1, 2, 3, 4, 5], 
-        "reviews": ["Wow that sounds amazing!", "Keep dreaming!"] 
+        "comments": "I can't wait until I'm driving around in my new car!",
+        "date": "10/24/2022" 
     }, 
     {
-        "list_type": "Travel Spots", 
+        "name": "Chris", 
+        "title": "Travel Spots", 
         "list_contents": "Italy, Japan, New Zealand", 
-        "rating": [1, 2, 3, 4, 5], 
-        "reviews": ["The food in Italy is soooo good!", "Japan sounds like a great cultural experience.", "The landscape in New Zealand is AMAZING!"] 
+        "comments": "The food in Italy is soooo good, and Japan sounds like a great cultural experience.",
+        "date": "10/24/2022"
     }
 ]

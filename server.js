@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 3001;
 const db = require('./models')
 
 //Sets Handlebars as the templating engine
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+//app.engine('handlebars', hbs.engine);
+//app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,10 +25,11 @@ app.use(passport.session());
 
 app.use(routes);
 
-require('./routes/html-routes.js')(app);
-require('./routes/api-routes.js')(app);
-require('./routes/post-api-routes.js')(app);
+//require('./routes/html-routes.js')(app);
+//require('./routes/api-routes.js')(app);
+//require('./routes/post-api-routes.js')(app);
 
-db.sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+

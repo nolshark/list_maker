@@ -1,5 +1,16 @@
-module.exports = function (connection, DataTypes) {
-    var Post = connection.define("Post", {
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Post extends Model {}
+
+Post.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
       name: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -27,6 +38,15 @@ module.exports = function (connection, DataTypes) {
         allowNull: true,
         len: [1],
       },
-    });
-    return Post;
-  };
+    }, 
+  
+    {
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'post',
+  }
+);
+
+module.exports = Post;

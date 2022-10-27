@@ -8,6 +8,7 @@ class User extends Model {
     }
 }
 
+// template for generating user data
 User.init(
     {
         id: {

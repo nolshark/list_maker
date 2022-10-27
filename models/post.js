@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+// template for generating list data
 Post.init(
   {
     id: {

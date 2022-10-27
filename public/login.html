@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>List-Maker</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
 
@@ -15,26 +15,38 @@
             <h1>List-Maker</h1>
         </header>
         
-        <!--Login Form-->
-        <form class="box">
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="email" placeholder="e.g. alex@example.com">
-              </div>
-            </div>
-          
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control">
-                <input class="input" type="password" placeholder="********">
-              </div>
-            </div>
-          
-            <button class="button is-primary">Sign in</button>
-          </form>
-          <div class="box">
-            <h2>New Member? Click to <a href="">signup</a>.</h2>
+        <section class="section">
+          <!--Login Form-->
+          <div class="container">
+            <form class="box">
+                <div class="field">
+                  <label class="label is-large">Email</label>
+                  <div class="control">
+                    <input class="input is-large" type="email" placeholder="e.g. alex@example.com">
+                  </div>
+                </div>
+              
+                <div class="field">
+                  <label class="label is-large">Password</label>
+                  <div class="control">
+                    <input class="input is-large" type="password" placeholder="********">
+                  </div>
+                </div>
+              
+                <button class="button is-primary">Sign in</button>
+              </form>
           </div>
+        </section>
+        <div class="container">
+          <div class="box has-text-centered">
+              <h2>New Member? Sign Up <strong><a href="">HERE</a></strong>.</h2>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="content has-text-centered">
+            Brought to you by <strong>MatCh MoNo</strong>. Framework by <strong><a href="https://bulma.io/">Bulma</a></strong>
+          </div>
+        </footer>
+
     </body>
 </html>

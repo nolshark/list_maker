@@ -1,40 +1,40 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Lists, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // router for displaying the dashboard
 router.get('/', withAuth, async (req, res) => {
     try {
-        const postData = await Post.findAll({
+        const listData = await Lists.findAll({
             where:{'user_id': req.session.user_id},
             include: User
         });
-        const posts = postData.map((post) => post.get({ plain: true }));
-        console.log(posts);
+        const lists = listData.map((list) => list.get({ plain: true }));
+        console.log(list);
         res.render('dashboard', {
-            posts,
+            lists,
         });
     } catch (err) {
         res.redirect('login');
     }
 });
 
-// router for making a new post
+// router for making a new list
 router.get('/new', withAuth, (req, res) => {
-    res.render('new-post',
+    res.render('new-list',
     );
 });
 
-// router for editing a post
+// router for editing a list
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id);
-        if (postData) {
-            const post = postData.get({ plain: true });
-            console.log(post);
-            res.render('edit-post', {
+        const listData = await Lists.findByPk(req.params.id);
+        if (listData) {
+            const list = listData.get({ plain: true });
+            console.log(list);
+            res.render('edit-list', {
                 layout: 'dashboard',
-                post,
+                list,
             });
         } else { 
             res.status(400).end();

@@ -52,4 +52,24 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-module.exports = router;
+router.get('/post', (req, res) => {
+    Post.findAll({
+        attributes: ["list_id", "list_title"], 
+        include: [
+            {
+                model: Post, 
+                attributes: [
+                    "list_id", 
+                    "list_title", 
+                ]  
+            }
+        ], 
+    })
+        .then((listmaker_db) => res.json(listmaker_db))
+        .catch ((err) => {
+            console.log(err); 
+        res.status(500).json(err);
+    }); 
+});  
+
+module.exports = router; 

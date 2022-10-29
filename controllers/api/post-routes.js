@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Lists } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findAll(); 
-        console.log(postData); 
-        const posts = postData.get({plain: true}); 
-        res.status(200).json(posts); 
+        const listData = await Lists.findAll(); 
+        console.log(Data); 
+        const lists = listData.get({plain: true}); 
+        res.status(200).json(lists); 
     }
     catch (err) {
         res.status(500).json(err.message); 
@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
         console.log(req.body);
     try {
-        const newPost = await Post.create({ ...req.body, user_id: req.session.user_id });
-        console.log(newPost);
-        res.json(newPost);
+        const newList = await Lists.create({ ...req.body, user_id: req.session.user_id });
+        console.log(newList);
+        res.json(newList);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -31,7 +31,7 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
     try {
         console.log(req.body);
-        const [affectedRows] = await Post.update(req.body, {
+        const [affectedRows] = await Lists.update(req.body, {
             where: {
                 id: req.params.id,
             },
@@ -49,7 +49,7 @@ router.put('/:id', withAuth, async (req, res) => {
 // delete
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const [affectedRows] = Post.destroy({
+        const [affectedRows] = Lists.destroy({
             where: {
                 id: req.params.id,
             },

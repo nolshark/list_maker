@@ -1,31 +1,31 @@
 const router = require('express').Router();
-const { Post, User } = require('../models/');
+const { Lists, User } = require('../models/');
 const withAuth = require('../utils/auth');
 
 // router for displaying the homepage after user has logged in
 router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findAll({
+        const listData = await Lists.findAll({
             include: User,
         });
-        const posts = postData.map((post) => post.get({ plain: true }));
-        res.render('homepage', { posts, logged_in: req.session.logged_in });
+        const lists = listData.map((list) => list.get({ plain: true }));
+        res.render('homepage', { lists, logged_in: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// router for displaying a single post
+// router for displaying a single list
 router.get('/post/:id', withAuth, async (req, res) => {
     try {
-        const postData = await Post.findOne({
+        const listData = await Lists.findOne({
             where: {id: req.params.id},
             include: [User],
         });
-        if (postData) {
-            const post = postData.get({ plain: true });
-            console.log(post);
-            res.render('single-post', { layout: 'main', post, logged_in: req.session.loggedIn});
+        if (listData) {
+            const list = listData.get({ plain: true });
+            console.log(list);
+            res.render('single-list', { layout: 'main', list, logged_in: req.session.loggedIn});
         } else {
             res.status(400).end();
         }
@@ -53,11 +53,11 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/post', (req, res) => {
-    Post.findAll({
+    Lists.findAll({
         attributes: ["list_id", "list_title"], 
         include: [
             {
-                model: Post, 
+                model: Lists, 
                 attributes: [
                     "list_id", 
                     "list_title", 

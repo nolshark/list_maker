@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {}
+class Lists extends Model {}
 
 // template for generating list data
-Post.init(
+Lists.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -50,4 +50,4 @@ Post.init(
   }
 );
 
-module.exports = Post;
+module.exports = Lists;

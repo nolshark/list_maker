@@ -29,7 +29,7 @@ Lists.init(
           len: [1],
         },
       },
-      description: {
+      comments: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1],

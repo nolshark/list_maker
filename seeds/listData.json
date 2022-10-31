@@ -3,21 +3,21 @@
         "name": "Mo", 
         "title": "Shopping", 
         "list_contents": "eggs, milk, ham, and cheese.",   
-        "description": "This is a pretty solid shopping list for the basics", 
+        "comments": "This is a pretty solid shopping list for the basics", 
         "date": "10/24/2022"
     }, 
     {
         "name": "Nolan", 
         "title": "Wishlist", 
         "list_contents": "Lambo, Bugatti", 
-        "description": "I can't wait until I'm driving around in my new car!",
+        "comments": "I can't wait until I'm driving around in my new car!",
         "date": "10/24/2022" 
     }, 
     {
         "name": "Chris", 
         "title": "Travel Spots", 
         "list_contents": "Italy, Japan, New Zealand", 
-        "description": "The food in Italy is soooo good, and Japan sounds like a great cultural experience.",
+        "comments": "The food in Italy is soooo good, and Japan sounds like a great cultural experience.",
         "date": "10/24/2022"
     }
 ]

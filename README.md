@@ -19,14 +19,19 @@ To build a CMS-style website where users can publish their lists. The applicatio
 * Utilized express-handlebars for the views and template language. 
 * Utilized MySQL to connect to the database using Sequelize for the models. 
 * Utilized Express.JS for API routes for the controllers.    
-* Utilized Heroku to deloy the app on a live URL.    
+* Utilized Heroku to deploy the app on a live URL.    
 
 ## Contributions
-Mohamed Salamey - 
-Nol
+Mohamed Salamey - Back End Database
+Nolan Bish - Back End Database
+Chris Garnica - Front End UI
+Mateusz Zielinski - Front End Logic
 
 ## Screen Shots
 
-
  
 ## Links
+
+GitHub Repo: https://github.com/nolshark/list_maker
+
+Deployed Live Link: 

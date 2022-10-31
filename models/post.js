@@ -6,18 +6,18 @@ class Lists extends Model {}
 // template for generating list data
 Lists.init(
   {
-    id: {
+    list_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-      name: {
+      list_name: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1],
       }, 
-      title: {
+      list_title: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1],
@@ -29,12 +29,12 @@ Lists.init(
           len: [1],
         },
       },
-      comments: {
+      list_comments: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1],
       },
-      date: {
+      list_date: {
         type: DataTypes.DATEONLY,
         allowNull: true,
         len: [1],

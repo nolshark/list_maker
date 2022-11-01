@@ -10,13 +10,13 @@ class User extends Model {
 
 // template for generating user data
 User.init(
-    {
+   {
         id: {
-            type: DataTypes.INTEGER,
+           type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-        },
+       },
         username: {
             type: DataTypes.STRING,
             allowNull: false,

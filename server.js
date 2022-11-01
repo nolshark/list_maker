@@ -1,15 +1,15 @@
 const path = require('path');
 const express = require('express');
-const routes = require('./controllers');
-const sequelize = require('./config/connection');
-const passport = require('./config/passport');
+const routes = require('../controllers');
+const sequelize = require('../config/connection');
+const passport = require('../config/passport');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const db = require('./models')
+const db = require('../models')
 
 //Sets Handlebars as the templating engine
 

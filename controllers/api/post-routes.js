@@ -5,11 +5,12 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
     try {
        const listData = await Lists.findAll(); 
-        console.log(Data); 
-        const lists = listData.get({plain: true}); 
+        console.log(listData); 
+        const lists = listData.map((list) => list.get({plain: true})); 
         res.status(200).json(lists); 
     }
     catch (err) {
+        console.log(err)
         res.status(500).json(err.message); 
     }
 });

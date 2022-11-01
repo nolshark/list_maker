@@ -1,5 +1,5 @@
-const User = require('./User');
-const Lists = require('./Post');
+const User = require('./user');
+const Lists = require('./post');
 
 // implementing models
 User.hasMany(Lists, {

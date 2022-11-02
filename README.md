@@ -29,7 +29,7 @@ Mateusz Zielinski - Front End Logic
 
 ## Screen Shots
 
-image.png
+![image](https://user-images.githubusercontent.com/107436206/199368008-65cb8e63-c300-4c5e-95af-69fd3068fac8.png)
  
 ## Links
 

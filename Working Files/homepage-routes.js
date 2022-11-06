@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Lists, User } = require('../models/');
+const { Lists, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // router for displaying the homepage after user has logged in

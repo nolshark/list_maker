@@ -6,19 +6,19 @@ class Lists extends Model {}
 // template for generating list data
 Lists.init(
   {
-    list_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
       list_name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
         len: [1],
       }, 
-      list_title: {
-        type: DataTypes.TEXT,
+      list_type: {
+        type: DataTypes.STRING,
         allowNull: false,
         len: [1],
       },
@@ -30,12 +30,12 @@ Lists.init(
         },
       },
       list_comments: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
         len: [1],
       },
       list_date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: true,
         len: [1],
       },
@@ -43,7 +43,6 @@ Lists.init(
   
     {
       sequelize,
-      timestamps: false,
       freezeTableName: true,
       underscored: true,
       modelName: 'post',

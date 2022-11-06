@@ -1,57 +1,60 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const db = require('../../models');
+const passport = require('../../config/passport')
 
-router.get('/', async (req, res) => {
+router.get('/api', async (req, res) => {
     res.status(200) .json({message: "get all users"})
 }); 
 
-// signup
-router.post('/signup', async (req, res) => {
-    try {
-        const newUser = await User.create({
-            username: req.body.username,
-            password: req.body.password
+module.exports = function(app) {
+    //login
+    app.post('/api/login', passport.authenticate("local"), (req, res) => {
+        res.json({
+            email: req.user.email,
+            id: req.user.id
         });
+    });
 
-        req.session.save(() => {
-            req.session.user_id = newUser.id;
-            req.session.username = newUser.username;
-            req.session.logged_in = true;
-            res.json(newUser);
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+    //signup
+    app.post("/api/signup", (req, res) => {
+        db.User.create({
+          email: req.body.email,
+          password: req.body.password
+        })
+          .then(() => {
+            res.redirect(307, "/api/login");
+          })
+          .catch(err => {
+            res.status(401).json(err);
+          });
+      });
+};
+    //try {
+     //   const user = await User.findOne({
+     //       where: {
+      //          username: req.body.username,
+      //      },
+      //  });
+      //  if(!user) {
+      //      res.status(400).json({ message: 'Invalid username' });
+       //     return;
+      //  }
+      //  const validPassword = user.checkPassword(req.body.password);
+      //  if(!validPassword) {
+       //     res.status(400).json({ message: 'Invalid password' });
+       //     return;
+      //  }
+     //   req.session.save(() => {
+       //     req.session.user_id = user.id;
+       //     req.session.username = user.username;
+       //     req.session.logged_in = true;
 
-// login
-router.post('/login', async (req, res) => {
-    try {
-        const user = await User.findOne({
-            where: {
-                username: req.body.username,
-            },
-        });
-        if(!user) {
-            res.status(400).json({ message: 'Invalid username' });
-            return;
-        }
-        const validPassword = user.checkPassword(req.body.password);
-        if(!validPassword) {
-            res.status(400).json({ message: 'Invalid password' });
-            return;
-        }
-        req.session.save(() => {
-            req.session.user_id = user.id;
-            req.session.username = user.username;
-            req.session.logged_in = true;
-
-            res.json({ user, message: 'Login successful' });
-        });
-    } catch (err) {
-        res.status(400).json({ message: 'Invalid username or password' })
-    }
-});
+       //     res.json({ user, message: 'Login successful' });
+      //  });
+   // } catch (err) {
+  ///      res.status(400).json({ message: 'Invalid username or password' })
+   // }
+//});
 
 // logout
 router.post('/logout', (req, res) => {

@@ -1,0 +1,29 @@
+const { Lists } = require('../models');
+
+const listdata = [
+    {
+        "list_name": "Mo", 
+        "list_title": "Shopping", 
+        "list_contents": "eggs, milk, ham, and cheese.",   
+        "list_comments": "This is a pretty solid shopping list for the basics", 
+        "list_date": "10/24/2022"
+    }, 
+    {
+        "list_name": "Nolan", 
+        "list_title": "Wishlist", 
+        "list_contents": "Lambo, Bugatti", 
+        "list_comments": "I can't wait until I'm driving around in my new car!",
+        "list_date": "10/24/2022" 
+    }, 
+    {
+        "list_name": "Chris", 
+        "list_title": "Travel Spots", 
+        "list_contents": "Italy, Japan, New Zealand", 
+        "list_comments": "The food in Italy is soooo good, and Japan sounds like a great cultural experience.",
+        "list_date": "10/24/2022"
+    },
+];
+
+const seedLists = () => Lists.bulkCreate(listdata);
+
+module.exports = seedLists;

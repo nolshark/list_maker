@@ -1,21 +1,34 @@
 const sequelize = require('../config/connection'); 
-const { User, Lists } = require('../models'); 
+const seedLists = require('./listData'); 
+const seedUser = require('./userData')
 
-const userData = require('./userData.json'); 
-const listData = require('./listData.json')
+//const userData = require('./userData.json'); 
+//const listData = require('./listData.json')
 
-const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
+//const seedDatabase = async () => {
+   // await sequelize.sync({ force: true });
 
-    const users = await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-      });
+   // const users = await User.bulkCreate(userData, {
+       // individualHooks: true,
+       // returning: true,
+      //});
     
-      const lists = await Lists.bulkCreate(listData, {returning: true})
+     // const lists = await Lists.bulkCreate(listData, {returning: true})
       
     
-      process.exit(0);
-    };
+     // process.exit(0);
+    //};
     
-    seedDatabase();
+   // seedDatabase();
+
+   const seedAll = async () => {
+    await sequelize.sync({ force: true });
+
+    await seedLists();
+
+    await seedUser();
+
+    process.exit(0);
+   };
+
+   seedAll();
